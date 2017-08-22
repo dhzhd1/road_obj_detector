@@ -1,0 +1,23 @@
+{T.O.D.O.}
+
+
+
+{MEMO}
+[Enable OpenCV under virtual environment]
+cp /usr/local/lib/python2.7/dist-packages/cv* [virtual_env]/lib/python2.7/site-packages/
+
+Based on the experience, we need more testing data to training this network.
+So I plan to add blur image into this dataset, since the road environment is complicated.
+Gaussian Blur: This kind of blur image will simulate the mist, rainy day.
+Median Blur: This kind will create some noise to simulate when the camera had some dirty spots.
+
+
+
+{Virtual Environment}
+pip install numpy
+[Enable OpenCV Under Virtual Environment]
+
+
+
+{References}
+http://docs.opencv.org/3.1.0/d4/d13/tutorial_py_filtering.html
