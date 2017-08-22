@@ -8,6 +8,9 @@ class PrepareRawData:
     def __init__(self):
         self.file_list = []
         self.dataset_path = '../dataset/'
+        if not os.path.isdir(self.dataset_path):
+            print("Dataset folder {} is not existing. Creating...".format(self.dataset_path))
+            os.mkdir(self.dataset_path)
 
     def download(self, file_list=None):
         if file_list is not None:
