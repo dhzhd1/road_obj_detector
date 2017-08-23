@@ -111,7 +111,7 @@ class Data:
                     new_notation_list.append(image_detail)
                     i += 1
         print("{} empty notations have been removed from list. {} useful data left."
-              .format(str(10000 - len(new_notation_list)), len(new_notation_list)))
+              .format(str(len(notation_list) - len(new_notation_list)), len(new_notation_list)))
         return new_notation_list
 
 
@@ -179,6 +179,7 @@ class Data:
 
 if __name__ == '__main__':
     # Create a larger dataset and save the new label notation file
+
     new_train_dataset = '../dataset/new_train_set/'
     train_folder = '../dataset/training/'
     test_folder = '../dataset/testing/'
@@ -195,3 +196,10 @@ if __name__ == '__main__':
     new_data = Data(new_notation_file_path, train_folder, test_folder, new_train_dataset)
     new_data.load_notations()
     print("Verify new training data notation, {} record inside!".format(len(new_data.notation_list)))
+    i = 0
+    for entry in new_data.notation_list:
+        if i < 14:
+            print(entry)
+            i += 1
+        else:
+            break
