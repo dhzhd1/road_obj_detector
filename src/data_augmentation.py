@@ -6,11 +6,10 @@ import json
 from PIL import Image, ImageOps, ImageEnhance, ImageFilter
 
 class Data:
-    def __init__(self, notation_file, training_folder, wild_testing_folder, new_train_dataset, split_ratio=0.8):
+    def __init__(self, notation_file, training_folder, wild_testing_folder, new_train_dataset):
         self.notation_file = notation_file
         self.training_folder = training_folder
         self.wild_testing_folder = wild_testing_folder
-        self.split_ratio = split_ratio
         self.notation_list = []
         self.new_notation_list = []
         self.new_train_set_path = new_train_dataset
@@ -183,12 +182,13 @@ if __name__ == '__main__':
     new_train_dataset = '../dataset/new_train_set/'
     train_folder = '../dataset/training/'
     test_folder = '../dataset/testing/'
+    notation_file_name = 'label.idl'
     new_notation_file_name = 'new_label.idl'
-    notation_file_path = os.path.join(train_folder,'label.idl')
-    data = Data(notation_file_path, train_folder, test_folder, new_train_dataset)
-    data.load_notations()
-    data.new_training_set()
-    print("Total {} images in new training dataset".format(len(data.new_notation_list)))
+    # notation_file_path = os.path.join(train_folder,notation_file_name)
+    # data = Data(notation_file_path, train_folder, test_folder, new_train_dataset)
+    # data.load_notations()
+    # data.new_training_set()
+    # print("Total {} images in new training dataset".format(len(data.new_notation_list)))
 
 
     # validate the new notation file if it is readable and correct
