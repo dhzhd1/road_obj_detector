@@ -3,6 +3,9 @@ import os
 
 def download_pretrain_model():
     pretrain_model_path = '../pretrain_model/'
+    if not os.path.exists(pretrain_model_path):
+        os.mkdir(pretrain_model_path)
+
     model_file_name = 'resnet-101-0000.params'
     net_desc_file_name = 'resnet-101-symbol.json'
     model_url = 'http://data.dmlc.ml/mxnet/models/imagenet/resnet/101-layers/resnet-101-0000.params'
